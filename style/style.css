@@ -17,4 +17,112 @@ h4,
 h5,
 h6 {
   font-family: "DM Serif Display", serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  background: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.primary-btn {
+  border: 1px solid white;
+}
+
+.primary-btn:hover {
+  background-color: white;
+  color: hsl(256, 26%, 20%);
+}
+
+/* ########header######## */
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 9999;
+  height: 80px;
+  background-color: white;
+}
+header .container {
+  background-color: white;
+  padding: 0 2em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ########nav######## */
+nav .toggle-nav {
+  width: 40px;
+  aspect-ratio: 1;
+  background-image: url("../images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav ul {
+  position: absolute;
+  inset: 100% 0 auto 0;
+  z-index: -1000;
+  padding: 1.8em 15%;
+  background: hsl(256, 26%, 20%);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+nav ul a {
+  display: block;
+  padding: 1.1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: white;
+  transition-property: color, background-color;
+  transition-duration: 0.3s;
+}
+nav ul a:hover {
+  background-color: white;
+  color: hsl(256, 26%, 20%);
+}
+nav ul[data-hidden=false] {
+  transform: translateY(0%);
+}
+
+nav:has(ul[data-hidden=false]) .toggle-nav {
+  background-image: url("../images/icon-close.svg");
+}
+
+/* ########main######## */
+main {
+  margin-top: 80px;
+}
+
+/* ####humanizing#### */
+#humanizing {
+  text-align: center;
+  background-color: hsl(256, 26%, 20%);
+  padding: 3em 2em;
+  color: white;
+}
+#humanizing h1 {
+  font-size: 2.6em;
+  line-height: 1;
+  font-weight: 100;
 }/*# sourceMappingURL=style.css.map */
