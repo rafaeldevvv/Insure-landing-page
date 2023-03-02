@@ -41,6 +41,7 @@ a {
 
 img {
    max-width: 100%;
+   display: block;
 }
 
 button {
@@ -49,14 +50,24 @@ button {
    background: none;
 }
 
+button, .btn {
+   cursor: pointer;
+}
+
 .btn {
    display: inline-block;
-   padding: 1em;
-
+   padding: .65em 2em;
+   
+   font-size: .9em;
    text-transform: uppercase;
+   line-height: 100%;
+
+   transition-property: color, border-color, border;
+   transition-duration: .4s;
 }
 .primary-btn {
    border: 1px solid white;
+   color: white;
 }
 .primary-btn:hover {
    background-color: white;
@@ -68,10 +79,21 @@ button {
 }
 
 .line {
-   width: 100px;
+   width: 150px;
    height: 2px;
    background-color: $very-light-gray;
    margin: 0 auto;
+}
+
+.flex {
+   display: flex;
+}
+.grid {
+   display: grid;
+}
+
+.gray-text {
+   color: $very-grayish-violet;
 }
 
 /* ########header######## */
@@ -79,13 +101,12 @@ header {
    position: fixed;
    z-index: 9999;
    inset: 0 0 auto 0;
-   
+
    height: 80px;
    background-color: white;
+   padding: 0 2em;
    
    .container {
-      background-color: white;
-      padding: 0 2em;
       height: 100%;
 
       display: flex;
@@ -147,11 +168,11 @@ nav:has(ul[data-hidden="false"]) .toggle-nav {
 /* ########main######## */
 main {
    margin-top: 80px;
+   text-align: center;
 }
 
 /* ####humanizing#### */ 
 #humanizing {
-   text-align: center;
    color: white;
    
    .content {
@@ -159,6 +180,7 @@ main {
       
       .back-img {
          position: absolute;
+         inset: 0 0 0 0;
          
          background-image:
            url('../images/bg-pattern-intro-left-mobile.svg'),
@@ -166,7 +188,7 @@ main {
          background-repeat: no-repeat;
          background-position: left top, right bottom;
          
-         inset: 0 0 0 0;
+         pointer-events: none;
       }
 
       .padding {
@@ -178,10 +200,9 @@ main {
       }
       
       .line {
-         margin: 10em 0 2em;
+         margin-block: 10em 2em;
       }
    }
-
 
    h1 {
       font-size: 2.6em;
@@ -193,5 +214,123 @@ main {
    p {
       color: $very-light-gray;
       line-height: 1.7;
+   }
+}
+
+/* ####different#### */
+#different {
+   padding: 0 2em;
+
+   h2 {
+      font-size: 2.6em;
+      margin-bottom: 2em;
+   }
+
+   h3 {
+      font-size: 1.6em;
+   }
+
+   img {
+      margin: 0 auto;
+   }
+
+   .grid {
+      gap: 4em;
+   }
+
+   article {
+      > * + * {
+         margin-top: 1em;
+      }
+   }
+}
+
+/* ####find more#### */
+#find-more {
+   padding: 6em 1em;
+
+   h2 {
+      font-size: 2.3em;
+      font-weight: 100;
+      line-height: 1;
+   }
+
+   .container {
+      color: white;
+      padding: 5em 2em;
+
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5em;
+
+      background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
+      background-repeat: no-repeat;
+      background-position: top right;
+   }
+}
+
+/* ########footer######## */
+footer {
+   text-align: center;
+   background-image: url('../images/bg-pattern-footer-mobile.svg');
+   background-repeat: no-repeat;
+   padding: 2em;
+
+   .socials {
+      display: flex;
+      gap: 1em;
+
+      a:hover {
+         filter: brightness(.3);
+      }
+   }
+
+   .top {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+
+      padding: 2em;
+      border-bottom: 2px solid $very-light-gray;
+   }
+
+   .bottom {
+      flex-direction: column;
+      align-items: center;
+
+      gap: 2em;
+      padding: 2em;
+   }
+}
+
+.footer-list {
+   display: flex;
+   flex-direction: column;
+   gap: .8em;
+
+   .list-title {
+      color: $very-grayish-violet;
+      margin-bottom: 1em;
+   }
+   
+   li, a {
+      font-size: .9em;
+      font-weight: 900;
+      color: $dark-violet;
+      text-transform: uppercase;
+   }
+
+   a:hover {
+      text-decoration: underline;
+   }
+}
+
+.attribution {
+   padding: .5em;
+   text-align: center;
+
+   a {
+      color: $very-light-gray;
    }
 }
