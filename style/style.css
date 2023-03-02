@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   outline: 0;
   border: 0;
@@ -51,6 +55,17 @@ button {
 .primary-btn:hover {
   background-color: white;
   color: hsl(256, 26%, 20%);
+}
+
+.dark-violet-bg {
+  background-color: hsl(256, 26%, 20%);
+}
+
+.line {
+  width: 100px;
+  height: 2px;
+  background-color: hsl(0, 0%, 98%);
+  margin: 0 auto;
 }
 
 /* ########header######## */
@@ -117,12 +132,33 @@ main {
 /* ####humanizing#### */
 #humanizing {
   text-align: center;
-  background-color: hsl(256, 26%, 20%);
-  padding: 3em 2em;
   color: white;
+}
+#humanizing .content {
+  position: relative;
+}
+#humanizing .content .back-img {
+  position: absolute;
+  background-image: url("../images/bg-pattern-intro-left-mobile.svg"), url("../images/bg-pattern-intro-right-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+  inset: 0 0 0 0;
+}
+#humanizing .content .padding {
+  padding: 2.5em;
+}
+#humanizing .content .padding > * + * {
+  margin-top: 2em;
+}
+#humanizing .content .line {
+  margin: 10em 0 2em;
 }
 #humanizing h1 {
   font-size: 2.6em;
   line-height: 1;
   font-weight: 100;
+}
+#humanizing p {
+  color: hsl(0, 0%, 98%);
+  line-height: 1.7;
 }/*# sourceMappingURL=style.css.map */
