@@ -8,6 +8,7 @@
 body {
   min-height: 100vh;
   font-family: "Karla", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 h1,
@@ -78,14 +79,20 @@ button, .btn {
   margin: 0 auto;
 }
 
-.flex {
+.flex, .column-to-row {
   display: flex;
 }
 
-.grid {
-  display: grid;
+.column-to-row {
+  flex-direction: column;
 }
 
+@media (min-width: 40em) {
+  .column-to-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .gray-text {
   color: hsl(273, 4%, 51%);
 }
@@ -200,7 +207,7 @@ main {
 #different img {
   margin: 0 auto;
 }
-#different .grid {
+#different .flex, #different .column-to-row {
   gap: 4em;
 }
 #different article > * + * {
@@ -219,7 +226,6 @@ main {
 #find-more .container {
   color: white;
   padding: 5em 2em;
-  flex-direction: column;
   align-items: center;
   gap: 2.5em;
   background-image: url("../images/bg-pattern-how-we-work-mobile.svg");
@@ -232,7 +238,9 @@ footer {
   text-align: center;
   background-image: url("../images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
-  padding: 2em;
+}
+footer .container {
+  margin: 2em;
 }
 footer .socials {
   display: flex;
@@ -242,7 +250,6 @@ footer .socials a:hover {
   filter: brightness(0.3);
 }
 footer .top {
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2em;
@@ -250,7 +257,6 @@ footer .top {
   border-bottom: 2px solid hsl(0, 0%, 98%);
 }
 footer .bottom {
-  flex-direction: column;
   align-items: center;
   gap: 2em;
   padding: 2em;
@@ -276,7 +282,7 @@ footer .bottom {
 }
 
 .attribution {
-  padding: 0.5em;
+  padding: 1em;
   text-align: center;
 }
 .attribution a {

@@ -15,6 +15,7 @@ $very-light-gray: hsl(0, 0%, 98%);
 body {
    min-height: 100vh;
    font-family: "Karla", Arial, Helvetica, sans-serif;
+   overflow-x: hidden;
 }
 
 h1,
@@ -88,10 +89,16 @@ button, .btn {
 .flex {
    display: flex;
 }
-.grid {
-   display: grid;
+.column-to-row {
+   @extend .flex;
+   flex-direction: column;
 }
-
+@media (min-width: 40em) {
+   .column-to-row {
+      flex-direction: row;
+      justify-content: space-between;
+   }
+}
 .gray-text {
    color: $very-grayish-violet;
 }
@@ -234,7 +241,7 @@ main {
       margin: 0 auto;
    }
 
-   .grid {
+   .flex {
       gap: 4em;
    }
 
@@ -259,7 +266,6 @@ main {
       color: white;
       padding: 5em 2em;
 
-      flex-direction: column;
       align-items: center;
       gap: 2.5em;
 
@@ -274,7 +280,10 @@ footer {
    text-align: center;
    background-image: url('../images/bg-pattern-footer-mobile.svg');
    background-repeat: no-repeat;
-   padding: 2em;
+
+   .container {
+      margin: 2em;
+   }
 
    .socials {
       display: flex;
@@ -286,7 +295,6 @@ footer {
    }
 
    .top {
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2em;
@@ -296,7 +304,6 @@ footer {
    }
 
    .bottom {
-      flex-direction: column;
       align-items: center;
 
       gap: 2em;
@@ -327,7 +334,7 @@ footer {
 }
 
 .attribution {
-   padding: .5em;
+   padding: 1em;
    text-align: center;
 
    a {
