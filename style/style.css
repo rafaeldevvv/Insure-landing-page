@@ -18,6 +18,11 @@ h4,
 h5,
 h6 {
   font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.6;
 }
 
 .container {
@@ -34,8 +39,7 @@ a {
 }
 
 img,
-picture,
-source {
+picture {
   max-width: 100%;
   display: block;
 }
@@ -55,9 +59,11 @@ button,
   display: inline-block;
   padding: 0.9em 2em 0.75em;
   font-size: 0.9em;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 100%;
-  transition-property: color, border-color, border;
+  letter-spacing: 1px;
+  transition-property: color, border-color, border, background-color;
   transition-duration: 0.4s;
 }
 
@@ -77,8 +83,7 @@ button,
 
 .line {
   width: 150px;
-  height: 2px;
-  background-color: hsl(0, 0%, 98%);
+  border-top: 1px solid hsl(273, 4%, 51%);
 }
 
 .flex, .column-to-row {
@@ -93,28 +98,12 @@ button,
   color: hsl(273, 4%, 51%);
 }
 
-.container-side-padding-2 {
-  padding: 0 2em;
+.light-gray-text {
+  color: hsl(0, 0%, 98%);
 }
 
-.container-side-padding-3 {
-  padding: 0 3em;
-}
-
-.container-side-padding-4 {
-  padding: 0 4em;
-}
-
-.container-padding-2 {
-  padding: 2em;
-}
-
-.container-padding-3 {
-  padding: 3em;
-}
-
-.container-padding-4 {
-  padding: 4em;
+.big-title {
+  font-size: 2.6em;
 }
 
 .separate-space-1 > * + * {
@@ -130,10 +119,12 @@ button,
 }
 
 /* media for utility classes */
-@media (min-width: 40em) {
+@media (min-width: 55em) {
+  .big-title {
+    font-size: 4.3em;
+  }
   .column-to-row {
     flex-direction: row;
-    justify-content: space-between;
   }
   .space-between-dk {
     justify-content: space-between;
@@ -145,18 +136,18 @@ header {
   z-index: 9999;
   inset: 0 0 auto 0;
   height: 80px;
+  padding-inline: 2em;
   background-color: white;
 }
 header .container {
   height: 100%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* ########nav######## */
 nav .toggle-nav {
-  width: 40px;
+  width: 35px;
   aspect-ratio: 1;
   background-image: url("../images/icon-hamburger.svg");
   background-repeat: no-repeat;
@@ -170,14 +161,15 @@ nav ul {
   background: hsl(256, 26%, 20%);
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
-  background: url("../images/bg-pattern-mobile-nav.svg") bottom no-repeat, hsl(256, 26%, 20%);
+  background: url("../images/bg-pattern-mobile-nav.svg") bottom right no-repeat, hsl(256, 26%, 20%);
 }
 nav ul a {
   display: block;
   padding: 1.1em;
   text-align: center;
   text-transform: uppercase;
-  font-size: 1.1em;
+  font-size: 1em;
+  font-weight: 700;
   color: white;
   transition-property: color, background-color;
   transition-duration: 0.3s;
@@ -194,7 +186,7 @@ nav:has(ul[data-hidden=false]) .toggle-nav {
   background-image: url("../images/icon-close.svg");
 }
 
-/* ########main, footer######## */
+/* ######################main, footer################################# */
 main {
   margin-top: 80px;
 }
@@ -204,49 +196,58 @@ footer {
   text-align: center;
 }
 
-/* ####humanizing#### */
+/* #############################humanizing############################# */
 #humanizing {
   position: relative;
   color: white;
 }
-#humanizing .line {
-  display: none;
-}
 #humanizing .content-container {
-  padding: 4em;
+  background-image: url("../images/bg-pattern-intro-left-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  padding: 4em 2em;
+}
+#humanizing .content-container .line {
+  display: none;
 }
 #humanizing .back-img {
   position: absolute;
   z-index: 1000;
   inset: 0 0 0 0;
-  background-image: url("../images/bg-pattern-intro-left-mobile.svg"), url("../images/bg-pattern-intro-right-mobile.svg");
+  background-image: url("../images/bg-pattern-intro-right-mobile.svg");
   background-repeat: no-repeat;
-  background-position: left 44%, right bottom;
+  background-position: right bottom;
 }
 #humanizing .blank {
-  height: 225px;
+  height: 175px;
   background-color: white;
+  padding-inline: 2.5em;
+}
+#humanizing .blank .container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#humanizing .blank .line {
+  position: absolute;
+  bottom: 2em;
+  left: calc(50% - 75px);
 }
 #humanizing img {
   margin: 0 auto;
+  width: 100%;
 }
 #humanizing h1 {
   margin: 0;
-  font-size: 2.6em;
   line-height: 1;
-  font-weight: 100;
-}
-#humanizing p {
-  color: hsl(0, 0%, 98%);
-  line-height: 1.7;
+  font-weight: 400;
 }
 
 /* ####different#### */
 #different {
-  padding: 0 2em;
+  padding: 0 2.5em;
 }
 #different h2 {
-  font-size: 2.6em;
   margin-bottom: 2em;
 }
 #different h3 {
@@ -261,11 +262,11 @@ footer {
 
 /* ####find more#### */
 #find-more {
-  padding: 6em 1em;
+  padding: 8em 2.5em;
 }
 #find-more h2 {
-  font-size: 2.3em;
-  font-weight: 100;
+  font-size: 2.45em;
+  font-weight: 400;
   line-height: 1;
 }
 #find-more .container {
@@ -282,6 +283,10 @@ footer {
 footer {
   background-image: url("../images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
+  background-color: hsl(0, 0%, 98%);
+}
+footer .padding {
+  padding: 4em;
 }
 footer .socials {
   display: flex;
@@ -293,28 +298,28 @@ footer .socials a:hover {
 footer .top {
   align-items: center;
   gap: 2em;
-  padding: 2em 0;
-  border-bottom: 2px solid hsl(0, 0%, 98%);
+  padding-bottom: 2em;
+  border-bottom: 2px solid hsl(0, 0%, 92%);
 }
 footer .bottom {
   align-items: center;
   gap: 2em;
-  padding: 2em;
+  padding-top: 2em;
 }
 
 .footer-list {
   display: flex;
   flex-direction: column;
-  gap: 0.8em;
+  gap: 1em;
+  font-size: 0.8em;
 }
 .footer-list li:first-child {
   color: hsl(273, 4%, 51%);
-  margin-bottom: 1em;
+  margin-bottom: 1.7em;
 }
 .footer-list li,
 .footer-list a {
-  font-size: 0.9em;
-  font-weight: 900;
+  font-weight: 700;
   color: hsl(256, 26%, 20%);
   text-transform: uppercase;
 }
@@ -323,7 +328,7 @@ footer .bottom {
 }
 
 .attribution {
-  padding: 1em;
+  padding: 1.5em;
   text-align: center;
 }
 .attribution a {
@@ -338,7 +343,6 @@ footer .bottom {
     position: static;
     transform: none;
     background: none;
-    white-space: nowrap;
     align-items: baseline;
     margin: 0;
     padding: 0;
@@ -372,14 +376,20 @@ footer .bottom {
     gap: 1.4em;
   }
   #humanizing .container > * {
-    flex-basis: 48%;
+    flex-basis: 49%;
   }
   #humanizing .content-container {
+    background: none;
     padding: 0;
   }
-  #humanizing .line {
+  #humanizing .content-container .line {
     display: block;
-    margin: 0;
+  }
+  #humanizing .blank {
+    height: 325px;
+  }
+  #humanizing .blank .line {
+    left: 0;
   }
   #humanizing .img-container {
     position: relative;
@@ -393,10 +403,33 @@ footer .bottom {
   }
   #humanizing .back-img {
     background-image: url("../images/bg-pattern-intro-left-desktop.svg"), url("../images/bg-pattern-intro-right-desktop.svg");
-    background-position: calc(0% - 25px) bottom, calc(100% + 25px) calc(0% - 80px);
+    background-position: left bottom, right calc(0% - 80px);
   }
   #humanizing h1 {
     margin-top: 1em;
-    font-size: 4.2em;
+  }
+  #different h2 {
+    margin-bottom: 1em;
+  }
+  #different img {
+    margin: 0;
+  }
+  #find-more .container {
+    padding-inline: 5em;
+    background-image: url("../images/bg-pattern-how-we-work-desktop.svg");
+    background-size: auto 100%;
+  }
+  #find-more h2 {
+    font-size: 3em;
+    width: 45%;
+  }
+  footer {
+    background-image: url("../images/bg-pattern-footer-desktop.svg");
+  }
+  footer .bottom {
+    align-items: flex-start;
+  }
+  footer .bottom > * {
+    flex-grow: 1;
   }
 }/*# sourceMappingURL=style.css.map */

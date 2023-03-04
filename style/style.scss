@@ -25,6 +25,11 @@ h4,
 h5,
 h6 {
   font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.6;
 }
 
 .container {
@@ -41,8 +46,7 @@ a {
 }
 
 img,
-picture,
-source {
+picture {
   max-width: 100%;
   display: block;
 }
@@ -63,10 +67,12 @@ button,
   padding: 0.9em 2em 0.75em;
 
   font-size: 0.9em;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 100%;
+  letter-spacing: 1px;
 
-  transition-property: color, border-color, border;
+  transition-property: color, border-color, border, background-color;
   transition-duration: 0.4s;
 }
 .primary-btn {
@@ -84,8 +90,7 @@ button,
 
 .line {
   width: 150px;
-  height: 2px;
-  background-color: $very-light-gray;
+  border-top: 1px solid $very-grayish-violet;
 }
 
 .flex {
@@ -99,24 +104,11 @@ button,
 .gray-text {
   color: $very-grayish-violet;
 }
-
-.container-side-padding-2 {
-  padding: 0 2em;
+.light-gray-text {
+  color: $very-light-gray;
 }
-.container-side-padding-3 {
-  padding: 0 3em;
-}
-.container-side-padding-4 {
-  padding: 0 4em;
-}
-.container-padding-2 {
-  padding: 2em;
-}
-.container-padding-3 {
-  padding: 3em;
-}
-.container-padding-4 {
-  padding: 4em;
+.big-title {
+  font-size: 2.6em;
 }
 
 .separate-space-1 {
@@ -135,10 +127,13 @@ button,
 }
 
 /* media for utility classes */
-@media (min-width: 40em) {
+@media (min-width: 55em) {
+  .big-title {
+    font-size: 4.3em;
+  }
+
   .column-to-row {
     flex-direction: row;
-    justify-content: space-between;
   }
 
   .space-between-dk {
@@ -153,12 +148,12 @@ header {
   inset: 0 0 auto 0;
 
   height: 80px;
+  padding-inline: 2em;
   background-color: white;
 
   .container {
     height: 100%;
 
-    display: flex;
     align-items: center;
     justify-content: space-between;
   }
@@ -167,7 +162,7 @@ header {
 /* ########nav######## */
 nav {
   .toggle-nav {
-    width: 40px;
+    width: 35px;
     aspect-ratio: 1;
 
     background-image: url("../images/icon-hamburger.svg");
@@ -186,7 +181,8 @@ nav {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
 
-    background: url("../images/bg-pattern-mobile-nav.svg") bottom no-repeat,
+    background: 
+      url("../images/bg-pattern-mobile-nav.svg") bottom right no-repeat,
       $dark-violet;
 
     a {
@@ -195,7 +191,8 @@ nav {
 
       text-align: center;
       text-transform: uppercase;
-      font-size: 1.1em;
+      font-size: 1em;
+      font-weight: 700;
       color: white;
 
       transition-property: color, background-color;
@@ -219,7 +216,7 @@ nav:has(ul[data-hidden="false"]) .toggle-nav {
   background-image: url("../images/icon-close.svg");
 }
 
-/* ########main, footer######## */
+/* ######################main, footer################################# */
 main {
   margin-top: 80px;
 }
@@ -228,17 +225,20 @@ footer {
   text-align: center;
 }
 
-/* ####humanizing#### */
+/* #############################humanizing############################# */
 #humanizing {
   position: relative;
   color: white;
 
-  .line {
-   display: none;
-  }
-
   .content-container {
-    padding: 4em;
+    background-image: url("../images/bg-pattern-intro-left-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding: 4em 2em;
+
+    .line {
+      display: none;
+    }
   }
 
   .back-img {
@@ -246,41 +246,49 @@ footer {
     z-index: 1000;
     inset: 0 0 0 0;
 
-    background-image: url("../images/bg-pattern-intro-left-mobile.svg"),
+    background-image:
       url("../images/bg-pattern-intro-right-mobile.svg");
     background-repeat: no-repeat;
-    background-position: left 44%, right bottom;
+    background-position: right bottom;
   }
 
   .blank {
-    height: 225px;
+    height: 175px;
     background-color: white;
+    padding-inline: 2.5em;
+
+    .container {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .line {
+      position: absolute;
+
+      bottom: 2em;
+      left: calc(50% - 75px);
+    }
   }
 
   img {
-   margin: 0 auto;
+    margin: 0 auto;
+    width: 100%;
   }
 
   h1 {
-   margin: 0;
-    font-size: 2.6em;
+    margin: 0;
     line-height: 1;
 
-    font-weight: 100;
-  }
-
-  p {
-    color: $very-light-gray;
-    line-height: 1.7;
+    font-weight: 400;
   }
 }
 
 /* ####different#### */
 #different {
-  padding: 0 2em;
+  padding: 0 2.5em;
 
   h2 {
-    font-size: 2.6em;
     margin-bottom: 2em;
   }
 
@@ -299,11 +307,11 @@ footer {
 
 /* ####find more#### */
 #find-more {
-  padding: 6em 1em;
+  padding: 8em 2.5em;
 
   h2 {
-    font-size: 2.3em;
-    font-weight: 100;
+    font-size: 2.45em;
+    font-weight: 400;
     line-height: 1;
   }
 
@@ -324,6 +332,11 @@ footer {
 footer {
   background-image: url("../images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
+  background-color: $very-light-gray;
+
+  .padding {
+    padding: 4em;
+  }
 
   .socials {
     display: flex;
@@ -337,33 +350,33 @@ footer {
   .top {
     align-items: center;
     gap: 2em;
+    padding-bottom: 2em;
 
-    padding: 2em 0;
-    border-bottom: 2px solid $very-light-gray;
+    border-bottom: 2px solid hsl(0, 0%, 92%);
   }
 
   .bottom {
     align-items: center;
 
     gap: 2em;
-    padding: 2em;
+    padding-top: 2em;
   }
 }
 
 .footer-list {
   display: flex;
   flex-direction: column;
-  gap: 0.8em;
+  gap: 1em;
+  font-size: 0.8em;
 
   li:first-child {
     color: $very-grayish-violet;
-    margin-bottom: 1em;
+    margin-bottom: 1.7em;
   }
 
   li,
   a {
-    font-size: 0.9em;
-    font-weight: 900;
+    font-weight: 700;
     color: $dark-violet;
     text-transform: uppercase;
   }
@@ -374,7 +387,7 @@ footer {
 }
 
 .attribution {
-  padding: 1em;
+  padding: 1.5em;
   text-align: center;
 
   a {
@@ -392,7 +405,6 @@ footer {
       position: static;
       transform: none;
       background: none;
-      white-space: nowrap;
       align-items: baseline;
       margin: 0;
       padding: 0;
@@ -430,20 +442,28 @@ footer {
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
-      gap:1.4em;
+      gap: 1.4em;
 
       > * {
-        flex-basis: 48%;
+        flex-basis: 49%;
       }
     }
 
     .content-container {
+      background: none;
       padding: 0;
+
+      .line {
+        display: block;
+      }
     }
 
-    .line {
-      display: block;
-      margin: 0;
+    .blank {
+      height: 325px;
+
+      .line {
+        left: 0;
+      }
     }
 
     .img-container {
@@ -454,7 +474,6 @@ footer {
         position: absolute;
         inset: 0 0 auto 0;
         width: 100%;
-
         height: auto;
       }
     }
@@ -462,14 +481,47 @@ footer {
     .back-img {
       background-image: url("../images/bg-pattern-intro-left-desktop.svg"),
         url("../images/bg-pattern-intro-right-desktop.svg");
-      background-position: 
-        calc(0% - 25px) bottom, 
-        calc(100% + 25px) calc(0% - 80px);
+      background-position: left bottom,
+        right calc(0% - 80px);
     }
 
     h1 {
       margin-top: 1em;
-      font-size: 4.2em;
+    }
+  }
+
+  #different {
+    h2 {
+      margin-bottom: 1em;
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+
+  #find-more {
+    .container {
+      padding-inline: 5em;
+      background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
+      background-size: auto 100%;
+    }
+
+    h2 {
+      font-size: 3em;
+      width: 45%;
+    }
+  }
+
+  footer {
+    background-image: url('../images/bg-pattern-footer-desktop.svg');
+
+    .bottom {
+      align-items: flex-start;
+
+      > * {
+        flex-grow: 1;
+      }
     }
   }
 }

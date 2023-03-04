@@ -14,8 +14,8 @@
   </head>
   <body>
     <!-- header -->
-    <header class="container-side-padding-2">
-      <div class="container">
+    <header>
+      <div class="container flex">
         <div class="logo">
           <img src="./images/logo.svg" alt="logo" />
         </div>
@@ -49,15 +49,15 @@
               <picture>
                 <source
                   srcset="./images/image-intro-desktop.jpg"
-                  media="(min-width: 40em)"
+                  media="(min-width: 45em)"
                 />
                 <img src="./images/image-intro-mobile.jpg" alt="" />
               </picture>
             </div>
-            <div class="content-container separate-space-2 ">
+            <div class="content-container separate-space-2">
               <div class="line"></div>
-              <h1>Humanizing your insurance.</h1>
-              <p class="gray-text">
+              <h1 class="big-title">Humanizing your insurance.</h1>
+              <p class="light-gray-text">
                 Get your life insurance coverage easier and faster. We blend our
                 expertise and technology to help you find the plan that’s right
                 for you. Ensure you and your loved ones are protected.
@@ -66,15 +66,18 @@
             </div>
           </div>
         </div>
-        <div class="blank"></div>
+        <div class="blank">
+          <div class="container">
+            <div class="line"></div>
+          </div>
+        </div>
         <div class="back-img no-event"></div>
       </section>
 
       <!-- ####different#### -->
       <section id="different">
         <div class="container">
-          <div class="line"></div>
-          <h2>We’re different</h2>
+          <h2 class="big-title">We’re different</h2>
           <div class="flex column-to-row">
             <article class="separate-space-1">
               <img src="./images/icon-snappy-process.svg" alt="" />
@@ -117,97 +120,99 @@
 
     <!-- footer -->
     <footer>
-      <div class="container">
-        <!-- top part -->
-        <div class="top flex column-to-row space-between-dk">
-          <img src="./images/logo.svg" alt="Logo" />
-          <ul class="socials flex">
-            <li>
-              <a href="">
-                <img src="./images/icon-facebook.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="./images/icon-twitter.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="./images/icon-pinterest.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="./images/icon-instagram.svg" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- bottom part -->
-        <div class="bottom flex column-to-row">
-          <!-- ####first#### -->
-          <ul class="footer-list">
-            <li>Our company</li>
-            <li>
-              <a href="#"> How we work </a>
-            </li>
-            <li>
-              <a href="#"> Why Insure? </a>
-            </li>
-            <li>
-              <a href="#"> View plans </a>
-            </li>
-            <li>
-              <a href="#"> Reviews </a>
-            </li>
-          </ul>
-
-          <!-- ####second#### -->
-          <ul class="footer-list">
-            <li>Help me</li>
-            <li>
-              <a href="#"> FAQ </a>
-            </li>
-            <li>
-              <a href="#"> Terms of use </a>
-            </li>
-            <li>
-              <a href="#"> Privacy policy </a>
-            </li>
-            <li>
-              <a href="#"> Cookies </a>
-            </li>
-          </ul>
-
-          <!-- ####third#### -->
-          <ul class="footer-list">
-            <li>Contact</li>
-            <li>
-              <a href="#"> Sales </a>
-            </li>
-            <li>
-              <a href="#"> Support </a>
-            </li>
-            <li>
-              <a href="#"> Live chat </a>
-            </li>
-          </ul>
-
-          <!-- ####fourth#### -->
-          <ul class="footer-list">
-            <li>Others</li>
-            <li>
-              <a href="#"> Careers </a>
-            </li>
-            <li>
-              <a href="#"> Press </a>
-            </li>
-            <li>
-              <a href="#"> Licenses </a>
-            </li>
-          </ul>
+      <div class="padding">
+        <div class="container">
+          <!-- top part -->
+          <div class="top flex column-to-row space-between-dk">
+            <img src="./images/logo.svg" alt="Logo" />
+            <ul class="socials flex">
+              <li>
+                <a href="">
+                  <img src="./images/icon-facebook.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="./images/icon-twitter.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="./images/icon-pinterest.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="./images/icon-instagram.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- bottom part -->
+          <div class="bottom flex column-to-row">
+            <!-- ####first#### -->
+            <ul class="footer-list">
+              <li>Our company</li>
+              <li>
+                <a href="#"> How we work </a>
+              </li>
+              <li>
+                <a href="#"> Why Insure? </a>
+              </li>
+              <li>
+                <a href="#"> View plans </a>
+              </li>
+              <li>
+                <a href="#"> Reviews </a>
+              </li>
+            </ul>
+  
+            <!-- ####second#### -->
+            <ul class="footer-list">
+              <li>Help me</li>
+              <li>
+                <a href="#"> FAQ </a>
+              </li>
+              <li>
+                <a href="#"> Terms of use </a>
+              </li>
+              <li>
+                <a href="#"> Privacy policy </a>
+              </li>
+              <li>
+                <a href="#"> Cookies </a>
+              </li>
+            </ul>
+  
+            <!-- ####third#### -->
+            <ul class="footer-list">
+              <li>Contact</li>
+              <li>
+                <a href="#"> Sales </a>
+              </li>
+              <li>
+                <a href="#"> Support </a>
+              </li>
+              <li>
+                <a href="#"> Live chat </a>
+              </li>
+            </ul>
+  
+            <!-- ####fourth#### -->
+            <ul class="footer-list">
+              <li>Others</li>
+              <li>
+                <a href="#"> Careers </a>
+              </li>
+              <li>
+                <a href="#"> Press </a>
+              </li>
+              <li>
+                <a href="#"> Licenses </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <p class="attribution dark-violet-bg gray-text">
