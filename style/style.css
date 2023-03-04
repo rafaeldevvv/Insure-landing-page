@@ -121,7 +121,7 @@ button,
 /* media for utility classes */
 @media (min-width: 55em) {
   .big-title {
-    font-size: 4.3em;
+    font-size: 4.4em;
   }
   .column-to-row {
     flex-direction: row;
@@ -420,8 +420,7 @@ footer .bottom {
     background-size: auto 100%;
   }
   #find-more h2 {
-    font-size: 3em;
-    width: 45%;
+    font-size: 3.5em;
   }
   footer {
     background-image: url("../images/bg-pattern-footer-desktop.svg");
