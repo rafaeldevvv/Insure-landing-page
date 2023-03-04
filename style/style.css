@@ -33,7 +33,9 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+picture,
+source {
   max-width: 100%;
   display: block;
 }
@@ -51,7 +53,7 @@ button,
 
 .btn {
   display: inline-block;
-  padding: 0.65em 2em;
+  padding: 0.9em 2em 0.75em;
   font-size: 0.9em;
   text-transform: uppercase;
   line-height: 100%;
@@ -59,12 +61,12 @@ button,
   transition-duration: 0.4s;
 }
 
-.primary-btn {
+.primary-btn, nav ul .active {
   border: 1px solid white;
   color: white;
 }
 
-.primary-btn:hover {
+.primary-btn:hover, nav ul .active:hover {
   background-color: white;
   color: hsl(256, 26%, 20%);
 }
@@ -192,9 +194,13 @@ nav:has(ul[data-hidden=false]) .toggle-nav {
   background-image: url("../images/icon-close.svg");
 }
 
-/* ########main######## */
+/* ########main, footer######## */
 main {
   margin-top: 80px;
+}
+
+main,
+footer {
   text-align: center;
 }
 
@@ -203,19 +209,29 @@ main {
   position: relative;
   color: white;
 }
+#humanizing .line {
+  display: none;
+}
+#humanizing .content-container {
+  padding: 4em;
+}
 #humanizing .back-img {
   position: absolute;
   z-index: 1000;
   inset: 0 0 0 0;
   background-image: url("../images/bg-pattern-intro-left-mobile.svg"), url("../images/bg-pattern-intro-right-mobile.svg");
   background-repeat: no-repeat;
-  background-position: left 45.2%, right bottom;
+  background-position: left 44%, right bottom;
 }
 #humanizing .blank {
-  height: 200px;
+  height: 225px;
   background-color: white;
 }
+#humanizing img {
+  margin: 0 auto;
+}
 #humanizing h1 {
+  margin: 0;
   font-size: 2.6em;
   line-height: 1;
   font-weight: 100;
@@ -254,7 +270,7 @@ main {
 }
 #find-more .container {
   color: white;
-  padding: 5em 2em;
+  padding: 5em 3em;
   align-items: center;
   gap: 2.5em;
   background-image: url("../images/bg-pattern-how-we-work-mobile.svg");
@@ -264,7 +280,6 @@ main {
 
 /* ########footer######## */
 footer {
-  text-align: center;
   background-image: url("../images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
 }
@@ -292,7 +307,7 @@ footer .bottom {
   flex-direction: column;
   gap: 0.8em;
 }
-.footer-list .list-title {
+.footer-list li:first-child {
   color: hsl(273, 4%, 51%);
   margin-bottom: 1em;
 }
@@ -313,4 +328,75 @@ footer .bottom {
 }
 .attribution a {
   color: hsl(0, 0%, 98%);
+}
+
+@media (min-width: 55em) {
+  nav .toggle-nav {
+    display: none;
+  }
+  nav ul {
+    position: static;
+    transform: none;
+    background: none;
+    white-space: nowrap;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul a {
+    color: hsl(273, 4%, 51%);
+    padding: 0.6em 1em;
+  }
+  nav ul a:hover {
+    color: hsl(256, 26%, 20%);
+  }
+  nav ul .active {
+    color: hsl(256, 26%, 20%);
+    border-color: hsl(256, 26%, 20%);
+  }
+  nav ul .active:hover {
+    background-color: hsl(256, 26%, 20%);
+    color: white;
+  }
+  main,
+  footer {
+    text-align: left;
+  }
+  #humanizing .top {
+    padding: 6em;
+  }
+  #humanizing .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1.4em;
+  }
+  #humanizing .container > * {
+    flex-basis: 48%;
+  }
+  #humanizing .content-container {
+    padding: 0;
+  }
+  #humanizing .line {
+    display: block;
+    margin: 0;
+  }
+  #humanizing .img-container {
+    position: relative;
+  }
+  #humanizing .img-container img,
+  #humanizing .img-container picture {
+    position: absolute;
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: auto;
+  }
+  #humanizing .back-img {
+    background-image: url("../images/bg-pattern-intro-left-desktop.svg"), url("../images/bg-pattern-intro-right-desktop.svg");
+    background-position: calc(0% - 25px) bottom, calc(100% + 25px) calc(0% - 80px);
+  }
+  #humanizing h1 {
+    margin-top: 1em;
+    font-size: 4.2em;
+  }
 }/*# sourceMappingURL=style.css.map */

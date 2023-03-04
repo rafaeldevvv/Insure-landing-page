@@ -32,7 +32,7 @@
               <a href="#"> Account </a>
             </li>
             <li>
-              <a href="#" class="primary-btn"> View plans </a>
+              <a href="#" class="active"> View plans </a>
             </li>
           </ul>
         </nav>
@@ -41,33 +41,35 @@
 
     <!-- main -->
     <main>
-
       <!-- ####humanizing#### -->
       <section id="humanizing">
         <div class="top dark-violet-bg">
           <div class="container">
             <div class="img-container">
-              <img src="./images/image-intro-mobile.jpg" alt="">
+              <picture>
+                <source
+                  srcset="./images/image-intro-desktop.jpg"
+                  media="(min-width: 40em)"
+                />
+                <img src="./images/image-intro-mobile.jpg" alt="" />
+              </picture>
             </div>
-            <div class="content-container">
-              <div class="container-padding-4 separate-space-2">
-                <h1>Humanizing your insurance.</h1>
-                <p class="gray-text">
-                  Get your life insurance coverage easier and faster. We blend our
-                  expertise and technology to help you find the plan that’s right for
-                  you. Ensure you and your loved ones are protected.
-                </p>
-                <a class="btn primary-btn"> View plans </a>
-              </div>
+            <div class="content-container separate-space-2 ">
+              <div class="line"></div>
+              <h1>Humanizing your insurance.</h1>
+              <p class="gray-text">
+                Get your life insurance coverage easier and faster. We blend our
+                expertise and technology to help you find the plan that’s right
+                for you. Ensure you and your loved ones are protected.
+              </p>
+              <a class="btn primary-btn"> View plans </a>
             </div>
           </div>
         </div>
-        <div class="blank">
-          
-        </div>
+        <div class="blank"></div>
         <div class="back-img no-event"></div>
       </section>
-      
+
       <!-- ####different#### -->
       <section id="different">
         <div class="container">
@@ -104,7 +106,9 @@
 
       <!-- ####find out more#### -->
       <section id="find-more">
-        <div class="container dark-violet-bg flex column-to-row space-between-dk">
+        <div
+          class="container dark-violet-bg flex column-to-row space-between-dk"
+        >
           <h2>Find out more about how we work</h2>
           <button class="btn primary-btn">How we work</button>
         </div>
@@ -120,22 +124,22 @@
           <ul class="socials flex">
             <li>
               <a href="">
-                <img src="./images/icon-facebook.svg" alt="">
+                <img src="./images/icon-facebook.svg" alt="" />
               </a>
             </li>
             <li>
               <a href="">
-                <img src="./images/icon-twitter.svg" alt="">
+                <img src="./images/icon-twitter.svg" alt="" />
               </a>
             </li>
             <li>
               <a href="">
-                <img src="./images/icon-pinterest.svg" alt="">
+                <img src="./images/icon-pinterest.svg" alt="" />
               </a>
             </li>
             <li>
               <a href="">
-                <img src="./images/icon-instagram.svg" alt="">
+                <img src="./images/icon-instagram.svg" alt="" />
               </a>
             </li>
           </ul>
@@ -145,7 +149,7 @@
         <div class="bottom flex column-to-row">
           <!-- ####first#### -->
           <ul class="footer-list">
-            <li class="list-title">Our company</li>
+            <li>Our company</li>
             <li>
               <a href="#"> How we work </a>
             </li>
@@ -162,7 +166,7 @@
 
           <!-- ####second#### -->
           <ul class="footer-list">
-            <li class="list-title">Help me</li>
+            <li>Help me</li>
             <li>
               <a href="#"> FAQ </a>
             </li>
@@ -179,7 +183,7 @@
 
           <!-- ####third#### -->
           <ul class="footer-list">
-            <li class="list-title">Contact</li>
+            <li>Contact</li>
             <li>
               <a href="#"> Sales </a>
             </li>
@@ -193,7 +197,7 @@
 
           <!-- ####fourth#### -->
           <ul class="footer-list">
-            <li class="list-title">Others</li>
+            <li>Others</li>
             <li>
               <a href="#"> Careers </a>
             </li>
