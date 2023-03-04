@@ -11,7 +11,6 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -25,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [here](https://github.com/rafaeldevvv/Insure-landing-page)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -215,8 +214,7 @@ This part means "When nav has a ul is not hidden, show this background image".
 
 -
 
-I liked this function because it is short and simple. I used _hidden == "false"_ so that when it is hidden it will show up because this expression returns true.
-
+I liked this function because it is short and simple. I used _hidden == "false"_ because it returns true(hidden) if the navList is not hidden(false) and vice-versa.
 ```js
 const navList = document.querySelector("#nav-list");
 
@@ -229,11 +227,6 @@ document.querySelector(".toggle-nav").addEventListener("click", () => {
 
 ### Continued development
 I want to improve my responsive design skills.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
