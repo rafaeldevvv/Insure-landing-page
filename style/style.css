@@ -44,7 +44,8 @@ button {
   background: none;
 }
 
-button, .btn {
+button,
+.btn {
   cursor: pointer;
 }
 
@@ -76,7 +77,6 @@ button, .btn {
   width: 150px;
   height: 2px;
   background-color: hsl(0, 0%, 98%);
-  margin: 0 auto;
 }
 
 .flex, .column-to-row {
@@ -87,16 +87,56 @@ button, .btn {
   flex-direction: column;
 }
 
+.gray-text {
+  color: hsl(273, 4%, 51%);
+}
+
+.container-side-padding-2 {
+  padding: 0 2em;
+}
+
+.container-side-padding-3 {
+  padding: 0 3em;
+}
+
+.container-side-padding-4 {
+  padding: 0 4em;
+}
+
+.container-padding-2 {
+  padding: 2em;
+}
+
+.container-padding-3 {
+  padding: 3em;
+}
+
+.container-padding-4 {
+  padding: 4em;
+}
+
+.separate-space-1 > * + * {
+  margin-top: 1em;
+}
+
+.separate-space-2 > * + * {
+  margin-top: 2em;
+}
+
+.no-event {
+  pointer-events: none;
+}
+
+/* media for utility classes */
 @media (min-width: 40em) {
   .column-to-row {
     flex-direction: row;
     justify-content: space-between;
   }
+  .space-between-dk {
+    justify-content: space-between;
+  }
 }
-.gray-text {
-  color: hsl(273, 4%, 51%);
-}
-
 /* ########header######## */
 header {
   position: fixed;
@@ -104,7 +144,6 @@ header {
   inset: 0 0 auto 0;
   height: 80px;
   background-color: white;
-  padding: 0 2em;
 }
 header .container {
   height: 100%;
@@ -161,27 +200,20 @@ main {
 
 /* ####humanizing#### */
 #humanizing {
+  position: relative;
   color: white;
 }
-#humanizing .content {
-  position: relative;
-}
-#humanizing .content .back-img {
+#humanizing .back-img {
   position: absolute;
+  z-index: 1000;
   inset: 0 0 0 0;
   background-image: url("../images/bg-pattern-intro-left-mobile.svg"), url("../images/bg-pattern-intro-right-mobile.svg");
   background-repeat: no-repeat;
-  background-position: left top, right bottom;
-  pointer-events: none;
+  background-position: left 45.2%, right bottom;
 }
-#humanizing .content .padding {
-  padding: 2.5em;
-}
-#humanizing .content .padding > * + * {
-  margin-top: 2em;
-}
-#humanizing .content .line {
-  margin-block: 10em 2em;
+#humanizing .blank {
+  height: 200px;
+  background-color: white;
 }
 #humanizing h1 {
   font-size: 2.6em;
@@ -210,9 +242,6 @@ main {
 #different .flex, #different .column-to-row {
   gap: 4em;
 }
-#different article > * + * {
-  margin-top: 1em;
-}
 
 /* ####find more#### */
 #find-more {
@@ -239,9 +268,6 @@ footer {
   background-image: url("../images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
 }
-footer .container {
-  margin: 2em;
-}
 footer .socials {
   display: flex;
   gap: 1em;
@@ -250,10 +276,9 @@ footer .socials a:hover {
   filter: brightness(0.3);
 }
 footer .top {
-  justify-content: center;
   align-items: center;
   gap: 2em;
-  padding: 2em;
+  padding: 2em 0;
   border-bottom: 2px solid hsl(0, 0%, 98%);
 }
 footer .bottom {
@@ -271,7 +296,8 @@ footer .bottom {
   color: hsl(273, 4%, 51%);
   margin-bottom: 1em;
 }
-.footer-list li, .footer-list a {
+.footer-list li,
+.footer-list a {
   font-size: 0.9em;
   font-weight: 900;
   color: hsl(256, 26%, 20%);
